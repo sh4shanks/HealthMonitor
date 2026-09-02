@@ -1,0 +1,23 @@
+{
+  "name": "release-health-monitor-frontend",
+  "version": "1.1.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "vite build",
+    "build:sentry": "npm run build && npm run sentry:release",
+    "sentry:release": "node scripts/sentry-release.mjs"
+  },
+  "dependencies": {
+    "@sentry/react": "^10.15.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {}
+}
