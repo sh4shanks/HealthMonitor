@@ -1,0 +1,8 @@
+{
+  "name": "Health Monitor",
+  "description": "Personal health and wellness tracking dashboard with vital metrics, trends, analytics, goals, and history.",
+  "prompt": "Health Monitor - personal health and wellness tracking dashboard",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

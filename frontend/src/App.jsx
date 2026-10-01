@@ -1,134 +1,331 @@
 import React, { useCallback, useEffect, useState } from "react";
 import * as Sentry from "@sentry/react";
-import { itemsApi } from "./api/items.js";
-import NoteForm from "./components/NoteForm.jsx";
-import NoteList from "./components/NoteList.jsx";
-
-const release = import.meta.env.VITE_SENTRY_RELEASE || "release-health-monitor@1.1.1";
-const diagnosticsEnabled = import.meta.env.DEV;
+import { healthApi } from "./api/health.js";
+import AddHealthDataModal from "./components/AddHealthDataModal.jsx";
+import Analytics from "./components/Analytics.jsx";
+import CalendarView from "./components/CalendarView.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+import Goals from "./components/Goals.jsx";
+import Navigation from "./components/Navigation.jsx";
+import OnboardingModal from "./components/OnboardingModal.jsx";
+import Profile from "./components/Profile.jsx";
+import QuickAddFab from "./components/QuickAddFab.jsx";
+import Settings from "./components/Settings.jsx";
+import Timeline from "./components/Timeline.jsx";
 
 export default function App() {
-  const [items, setItems] = useState([]);
-  const [editing, setEditing] = useState(null);
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [activeTab, setActiveTab] = useState("dashboard");
+  const [records, setRecords] = useState([]);
+  const [goals, setGoals] = useState({ steps: 10000, waterMl: 2500, sleepMinutes: 480, activeMinutes: 45 });
+  const [profile, setProfile] = useState({ name: "Shashank", age: 29, unitSystem: "metric", trackingAlertsEnabled: true, onboardingCompleted: true });
+  const [ranges, setRanges] = useState({});
   const [loading, setLoading] = useState(true);
-  const [busy, setBusy] = useState(false);
-  const [busyId, setBusyId] = useState(null);
-  const [status, setStatus] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [showOnboarding, setShowOnboarding] = useState(false);
 
-  const load = useCallback(async () => {
+  // Add / Edit Modal State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingRecord, setEditingRecord] = useState(null);
+  const [defaultMetricForModal, setDefaultMetricForModal] = useState("heart_rate");
+
+  // Load all initial health data
+  const loadData = useCallback(async () => {
     setLoading(true);
     try {
-      setItems(await itemsApi.list());
-      setStatus("");
+      const [recs, g, p, rng] = await Promise.all([
+        healthApi.getRecords(),
+        healthApi.getGoals(),
+        healthApi.getProfile(),
+        healthApi.getRanges()
+      ]);
+      setRecords(recs);
+      setGoals(g);
+      setProfile(p);
+      setRanges(rng);
+
+      // Trigger onboarding if not completed and no records
+      if (p && p.onboardingCompleted === false && recs.length === 0) {
+        setShowOnboarding(true);
+      }
     } catch (error) {
       Sentry.captureException(error);
-      setStatus(`Could not load notes: ${error.message}`);
+      setStatusMessage(`Error loading health data: ${error.message}`);
     } finally {
       setLoading(false);
     }
   }, []);
 
-  useEffect(() => { load(); }, [load]);
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
 
-  function reset() {
-    setEditing(null);
-    setTitle("");
-    setContent("");
-  }
-
-  async function save(event) {
-    event.preventDefault();
-    setBusy(true);
-    setStatus("");
+  // Record CRUD Handlers
+  async function handleSaveRecord(recordData) {
     try {
-      if (editing) await itemsApi.update(editing.id, { title: title.trim(), content });
-      else await itemsApi.create({ title: title.trim(), content });
-      reset();
-      await load();
-      setStatus(editing ? "Note updated." : "Note created.");
+      if (recordData.id) {
+        await healthApi.updateRecord(recordData.id, recordData);
+        setStatusMessage("Record updated successfully.");
+      } else {
+        await healthApi.createRecord(recordData);
+        setStatusMessage("New health reading recorded.");
+      }
+      await loadData();
+      setTimeout(() => setStatusMessage(""), 3500);
     } catch (error) {
       Sentry.captureException(error);
-      setStatus(`Save failed: ${error.message}`);
-    } finally {
-      setBusy(false);
+      throw error;
     }
   }
 
-  async function remove(id) {
-    if (!window.confirm("Delete this note?")) return;
-    setBusyId(id);
+  async function handleDeleteRecord(id) {
+    if (!window.confirm("Delete this biometric reading?")) return;
     try {
-      await itemsApi.remove(id);
-      if (editing?.id === id) reset();
-      await load();
-      setStatus("Note deleted.");
+      await healthApi.deleteRecord(id);
+      setRecords((prev) => prev.filter((r) => r.id !== id));
+      setStatusMessage("Reading deleted.");
+      setTimeout(() => setStatusMessage(""), 3000);
     } catch (error) {
       Sentry.captureException(error);
-      setStatus(`Delete failed: ${error.message}`);
-    } finally {
-      setBusyId(null);
+      setStatusMessage(`Delete failed: ${error.message}`);
     }
   }
 
-  function edit(item) {
-    setEditing(item);
-    setTitle(item.title);
-    setContent(item.content);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function triggerUnhandledFrontendError() {
-    throw new Error("Intentional Unhandled Exception!");
-  }
-
-  function triggerHandledFrontendError() {
+  // Demo & Clear Handlers
+  async function handleSeedDemo() {
     try {
-      throw new Error("Intentional Handled Exception!");
+      await healthApi.seedDemo();
+      await loadData();
     } catch (error) {
       Sentry.captureException(error);
-      setStatus("Handled error sent to Sentry.");
+      throw error;
     }
   }
 
-  async function triggerBackendError() {
+  async function handleClearDemo() {
     try {
-      await itemsApi.diagnostic("async-rejection");
-      setStatus("Backend diagnostic error captured.");
+      await healthApi.clearRecords(true);
+      await loadData();
     } catch (error) {
       Sentry.captureException(error);
-      setStatus(`Backend diagnostic failed: ${error.message}`);
+      throw error;
     }
+  }
+
+  async function handleClearAll() {
+    try {
+      await healthApi.clearRecords(false);
+      await loadData();
+    } catch (error) {
+      Sentry.captureException(error);
+      throw error;
+    }
+  }
+
+  async function handleImportRecords(importedList, overwrite = false) {
+    try {
+      await healthApi.importRecords(importedList, overwrite);
+      await loadData();
+      setStatusMessage(`Imported ${importedList.length} records successfully.`);
+      setTimeout(() => setStatusMessage(""), 3500);
+    } catch (error) {
+      Sentry.captureException(error);
+      throw error;
+    }
+  }
+
+  async function handleUpdateGoals(updatedGoals) {
+    try {
+      const saved = await healthApi.updateGoals(updatedGoals);
+      setGoals(saved);
+      setStatusMessage("Goals updated.");
+      setTimeout(() => setStatusMessage(""), 3000);
+    } catch (error) {
+      Sentry.captureException(error);
+      throw error;
+    }
+  }
+
+  async function handleUpdateProfile(updatedProfile) {
+    try {
+      const saved = await healthApi.updateProfile(updatedProfile);
+      setProfile(saved);
+      setStatusMessage("Profile preferences saved.");
+      setTimeout(() => setStatusMessage(""), 3000);
+    } catch (error) {
+      Sentry.captureException(error);
+      throw error;
+    }
+  }
+
+  function handleCompleteOnboarding(data) {
+    setShowOnboarding(false);
+    handleUpdateProfile({
+      name: data.name,
+      unitSystem: data.unitSystem,
+      onboardingCompleted: true
+    });
+    if (data.goals) {
+      handleUpdateGoals(data.goals);
+    }
+  }
+
+  function openAddModal(recordToEdit = null, metricKey = "heart_rate") {
+    setEditingRecord(recordToEdit);
+    setDefaultMetricForModal(metricKey || "heart_rate");
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
+    setEditingRecord(null);
+  }
+
+  // Count active alerts
+  const hasDemoData = records.some((r) => r.isDemo);
+  let alertsCount = 0;
+  if (profile?.trackingAlertsEnabled !== false) {
+    const latestHR = records.find((r) => r.metric === "heart_rate");
+    const latestSpO2 = records.find((r) => r.metric === "spo2");
+    const latestBP = records.find((r) => r.metric === "blood_pressure");
+
+    if (latestHR && (latestHR.value < 55 || latestHR.value > 105)) alertsCount++;
+    if (latestSpO2 && latestSpO2.value < 94) alertsCount++;
+    if (latestBP && (latestBP.value.systolic > 135 || latestBP.value.diastolic > 88)) alertsCount++;
   }
 
   return (
-    <main className="shell">
-      <header className="hero">
-        <div>
-          <p className="eyebrow">DEVOPS • SENTRY</p>
-          <h1>Release Health Monitor</h1>
-          <p className="sub">Production-minded CRUD notes with validation, observability, resilient API handling and release tracking.</p>
+    <div className="app-container">
+      {/* Navigation (Sidebar on Desktop, Bottom bar on Mobile) */}
+      <Navigation
+        activeTab={activeTab}
+        onSelectTab={setActiveTab}
+        alertsCount={alertsCount}
+        hasDemoData={hasDemoData}
+      />
+
+      {/* Main Content Area */}
+      <main className="main-content">
+        <div className="content-body">
+          {statusMessage && (
+            <div
+              style={{
+                background: "rgba(6, 182, 212, 0.15)",
+                border: "1px solid rgba(6, 182, 212, 0.3)",
+                color: "#22d3ee",
+                padding: "10px 16px",
+                borderRadius: "var(--radius-md)",
+                fontSize: "13.5px",
+                marginBottom: "20px",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center"
+              }}
+            >
+              <span>{statusMessage}</span>
+              <button
+                onClick={() => setStatusMessage("")}
+                style={{ color: "#22d3ee", fontWeight: "700", fontSize: "16px", padding: "0 6px" }}
+              >
+                &times;
+              </button>
+            </div>
+          )}
+
+          {loading ? (
+            <div style={{ padding: "80px 20px", textAlign: "center", color: "var(--text-muted)" }}>
+              <div style={{ fontSize: "32px", marginBottom: "12px", animation: "spin 1.5s linear infinite" }}>⏳</div>
+              <p style={{ fontSize: "14px", fontWeight: "500" }}>Loading Health Monitor V2...</p>
+            </div>
+          ) : (
+            <>
+              {activeTab === "dashboard" && (
+                <Dashboard
+                  records={records}
+                  goals={goals}
+                  profile={profile}
+                  ranges={ranges}
+                  onOpenAddModal={(rec) => openAddModal(rec, "heart_rate")}
+                  onNavigateTab={setActiveTab}
+                />
+              )}
+
+              {activeTab === "timeline" && (
+                <Timeline
+                  records={records}
+                  onEdit={(record) => openAddModal(record, record.metric)}
+                  onDelete={handleDeleteRecord}
+                  onAddNew={() => openAddModal(null, "heart_rate")}
+                  unitSystem={profile?.unitSystem}
+                />
+              )}
+
+              {activeTab === "calendar" && (
+                <CalendarView
+                  records={records}
+                  goals={goals}
+                  onOpenAddModal={(rec) => openAddModal(rec, "heart_rate")}
+                  unitSystem={profile?.unitSystem}
+                />
+              )}
+
+              {activeTab === "analytics" && (
+                <Analytics records={records} unitSystem={profile?.unitSystem} />
+              )}
+
+              {activeTab === "goals" && (
+                <Goals
+                  goals={goals}
+                  records={records}
+                  onUpdateGoals={handleUpdateGoals}
+                  onQuickLog={handleSaveRecord}
+                  unitSystem={profile?.unitSystem}
+                />
+              )}
+
+              {activeTab === "profile" && (
+                <Profile
+                  profile={profile}
+                  records={records}
+                  goals={goals}
+                  onUpdateProfile={handleUpdateProfile}
+                />
+              )}
+
+              {activeTab === "settings" && (
+                <Settings
+                  hasDemoData={hasDemoData}
+                  onSeedDemo={handleSeedDemo}
+                  onClearDemo={handleClearDemo}
+                  onClearAll={handleClearAll}
+                  profile={profile}
+                  records={records}
+                  onUpdateProfile={handleUpdateProfile}
+                  onImportRecords={handleImportRecords}
+                />
+              )}
+            </>
+          )}
         </div>
-        <span className="release">{release}</span>
-      </header>
+      </main>
 
-      <NoteForm {...{ editing, title, content, busy, onTitleChange: setTitle, onContentChange: setContent, onSubmit: save, onCancel: reset }} />
-      <NoteList {...{ items, loading, busyId, onRefresh: load, onEdit: edit, onDelete: remove }} />
+      {/* Floating Quick Add System (FAB) */}
+      <QuickAddFab onSelectMetric={(metric) => openAddModal(null, metric)} />
 
-      {diagnosticsEnabled && (
-        <section className="card testing">
-          <h2>Sentry Verification</h2>
-          <p>Development-only diagnostic controls. They are not exposed in production builds.</p>
-          <div className="grid">
-            <button onClick={triggerUnhandledFrontendError}>Trigger Unhandled Frontend Error</button>
-            <button onClick={triggerBackendError}>Trigger Backend Diagnostic Error</button>
-            <button onClick={triggerHandledFrontendError}>Trigger Handled Frontend Error</button>
-          </div>
-        </section>
-      )}
+      {/* Add / Edit Health Data Modal */}
+      <AddHealthDataModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        onSave={handleSaveRecord}
+        editingRecord={editingRecord}
+        defaultMetric={defaultMetricForModal}
+      />
 
-      {status && <div className="status" role="status" aria-live="polite">{status}</div>}
-    </main>
+      {/* Onboarding Dialog */}
+      <OnboardingModal
+        isOpen={showOnboarding}
+        onClose={() => setShowOnboarding(false)}
+        onComplete={handleCompleteOnboarding}
+      />
+    </div>
   );
 }

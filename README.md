@@ -1,130 +1,51 @@
-# Release Health Monitor — Production-minded rewrite
+# Health Monitor — Personal Health & Wellness Tracking Dashboard
 
-A React + Express CRUD application instrumented with Sentry. This rewrite keeps the original assignment's core behavior while adding validation, safer diagnostics, centralized API handling, graceful shutdown, security headers, rate limiting, tests, CI, and a deterministic source-map release workflow.
+A modern, responsive personal health tracking dashboard built with React, Vite, Express, and Node.js. It allows users to record, visualize, analyze, and review vital health and wellness metrics in an intuitive dark glassmorphism interface.
 
-## What changed
+> ⚠️ **Informational Tracking Notice:**  
+> This application is strictly designed for personal habit and wellness tracking. It does **not** diagnose medical conditions, prescribe medication, recommend dosages, or replace professional medical guidance. Configured tracking ranges are non-diagnostic reference baselines.
 
-- Added root `.gitignore`; `.env` files and OS artifacts are excluded.
-- Added strict Zod validation for create/update requests.
-- Added JSON body-size limits, Helmet, CORS allow-listing, and rate limiting.
-- Added centralized API error handling and frontend request handling.
-- Added React/Sentry error boundary.
-- Added loading, disabled, and status states.
-- Added graceful SIGTERM/SIGINT shutdown with Sentry flush.
-- Diagnostic error endpoints are disabled unless `ENABLE_TEST_ERRORS=true`.
-- Diagnostic controls are only rendered in Vite development mode.
-- Production traces are sampled instead of sending 100% of transactions.
-- Vite generates hidden source maps so maps can be uploaded to Sentry without being advertised as public assets.
-- Sentry CLI is invoked at an explicit pinned version by the release script.
-- Added backend API tests and GitHub Actions CI.
+---
 
-## Run locally
+## Features
 
-### Backend
+- **Dashboard Overview:** Real-time metrics for Heart Rate, Blood Pressure, Blood Oxygen (SpO₂), Body Temperature, Activity/Steps, Hydration, Sleep Duration, and Body Weight with trend sparklines.
+- **Biometric Logging:** Validated entry form for all major vitals with sanity range checks.
+- **Health History:** Comprehensive tabular log with live filtering, full-text search across notes, sorting, and deletion.
+- **Biometric Analytics:** Interactive SVG charts and distribution statistics across multiple timeframes (Today, 7 Days, 30 Days, 3 Months).
+- **Wellness Goals:** Interactive progress tracking towards daily steps, hydration volume, and sleep duration milestones.
+- **User Profile:** Manage physical baseline metrics (Height, Weight, Age, Units) and calculate reference BMI.
+- **Demonstration Mode:** Optional sample dataset clearly tagged as `DEMO DATA` with one-click seeding and clearing.
+- **Safe Baseline Notifications:** Neutral alerts for metrics recorded outside your configured target ranges.
+
+---
+
+## Quickstart & Local Execution
+
+The project is unified at the workspace root:
 
 ```bash
-cd backend
+# 1. Install dependencies
 npm install
-cp .env.example .env
+
+# 2. Start in development mode (Express API + Vite on http://localhost:3000)
 npm run dev
-```
 
-### Frontend
+# 3. Or compile and run in production mode
+npm run build
+npm start
 
-```bash
-cd frontend
-npm install
-cp .env.example .env
-npm run dev
-```
-
-Backend: `http://localhost:5000`
-Frontend: `http://localhost:5173`
-
-## Environment
-
-Backend:
-
-```env
-NODE_ENV=development
-PORT=5000
-FRONTEND_URL=http://localhost:5173
-SENTRY_DSN=
-SENTRY_RELEASE=release-health-monitor@1.1.1
-ENABLE_TEST_ERRORS=false
-```
-
-Frontend:
-
-```env
-VITE_API_URL=http://localhost:5000
-VITE_SENTRY_DSN=
-VITE_SENTRY_RELEASE=release-health-monitor@1.1.1
-```
-
-Never commit `.env` files or Sentry auth tokens.
-
-## Sentry source maps
-
-Set the Sentry CLI credentials in the CI/terminal environment, not in the frontend bundle:
-
-```text
-SENTRY_AUTH_TOKEN
-SENTRY_ORG
-SENTRY_PROJECT
-```
-
-Then:
-
-```bash
-cd frontend
-npm run build:sentry
-```
-
-The build creates hidden source maps and the release script uploads them to Sentry, then finalizes the release. If credentials are missing, the command fails instead of silently claiming the upload succeeded.
-
-## Diagnostics
-
-For controlled Sentry verification only, run the backend with:
-
-```env
-ENABLE_TEST_ERRORS=true
-```
-
-The frontend diagnostic controls are shown only in development builds. The backend diagnostic route captures an error without intentionally creating an unhandled promise rejection or crashing the service.
-
-For production, keep `ENABLE_TEST_ERRORS=false`.
-
-## API
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | `/api/health` | Liveness/status |
-| GET | `/api/items` | List notes |
-| GET | `/api/items/:id` | Get note |
-| POST | `/api/items` | Create note |
-| PUT | `/api/items/:id` | Update note |
-| DELETE | `/api/items/:id` | Delete note |
-| POST | `/api/errors/*` | Development-only Sentry diagnostics |
-
-Storage remains in memory to preserve the original assignment scope. For a real deployment, replace `backend/src/store/items.js` with a database/repository layer.
-
-## Tests
-
-```bash
-cd backend
+# 4. Run automated test suite
 npm test
 ```
 
-## CI
+### Note on In-Memory Prototype Storage
+This version uses an in-memory data store (`backend/src/store/healthStore.js`). Stored records persist for the duration of the server session and reset when the server restarts.
 
-`.github/workflows/ci.yml` runs backend syntax/tests and the frontend production build on pushes to `main` and pull requests.
+---
 
-## Production next steps
+## Tech Stack & Architecture
 
-1. Replace in-memory storage with a managed database.
-2. Add authentication/authorization if notes become user-owned.
-3. Move secrets to the deployment platform's secret manager.
-4. Configure a real reverse proxy/TLS and a deployment-specific CORS origin.
-5. Add frontend component/E2E tests.
-6. Add Sentry alerting and release-health thresholds in the Sentry project.
+- **Frontend:** React 19, Vite 6, Custom SVG Sparklines & Charts, CSS Dark Glassmorphism.
+- **Backend:** Node.js, Express 5, CORS allow-listing, rate limiting, and security headers.
+- **Observability (Optional):** Sentry for React browser tracing and Node exception monitoring.

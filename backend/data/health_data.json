@@ -1,0 +1,946 @@
+{
+  "healthRecords": [
+    {
+      "id": "7fd18b37-ce69-47db-9bb8-bf27bc109bf0",
+      "metric": "heart_rate",
+      "value": 72,
+      "unit": "bpm",
+      "recordedAt": "2026-09-29T11:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.858Z",
+      "updatedAt": "2026-09-29T12:52:34.858Z"
+    },
+    {
+      "id": "6474b855-4c11-4f53-af3e-185cc36c7714",
+      "metric": "heart_rate",
+      "value": 76,
+      "unit": "bpm",
+      "recordedAt": "2026-09-29T08:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.858Z",
+      "updatedAt": "2026-09-29T12:52:34.858Z"
+    },
+    {
+      "id": "c10a7de4-14ba-41b5-8e97-24913890c4b4",
+      "metric": "heart_rate",
+      "value": 68,
+      "unit": "bpm",
+      "recordedAt": "2026-09-29T03:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "01d8ffc2-1276-45a5-8595-abe5601b079d",
+      "metric": "heart_rate",
+      "value": 71,
+      "unit": "bpm",
+      "recordedAt": "2026-09-28T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "b24f8505-facb-4d2a-bc30-795fad9f2a75",
+      "metric": "heart_rate",
+      "value": 75,
+      "unit": "bpm",
+      "recordedAt": "2026-09-28T08:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "179f46ab-e0c5-4c74-81ce-84fd337fcab1",
+      "metric": "heart_rate",
+      "value": 69,
+      "unit": "bpm",
+      "recordedAt": "2026-09-27T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "d6e324e0-54bc-47b6-9d91-8a306c9a949f",
+      "metric": "heart_rate",
+      "value": 74,
+      "unit": "bpm",
+      "recordedAt": "2026-09-26T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "09108cb6-b0f0-46cb-854b-be8606446b72",
+      "metric": "heart_rate",
+      "value": 76,
+      "unit": "bpm",
+      "recordedAt": "2026-09-25T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "7e359d56-e324-4565-8616-1259c892b70f",
+      "metric": "heart_rate",
+      "value": 70,
+      "unit": "bpm",
+      "recordedAt": "2026-09-24T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "cf9b806f-0024-439b-9917-0952d4b1759b",
+      "metric": "heart_rate",
+      "value": 73,
+      "unit": "bpm",
+      "recordedAt": "2026-09-23T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "c40d5462-c55d-40de-aab4-ac9ec0dc5234",
+      "metric": "heart_rate",
+      "value": 71,
+      "unit": "bpm",
+      "recordedAt": "2026-09-22T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "e57fe223-1ab8-4a02-925b-9ed938e27db3",
+      "metric": "heart_rate",
+      "value": 74,
+      "unit": "bpm",
+      "recordedAt": "2026-09-21T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "fc27208a-20e0-433a-823d-f965f7d7112c",
+      "metric": "heart_rate",
+      "value": 69,
+      "unit": "bpm",
+      "recordedAt": "2026-09-20T12:52:34.857Z",
+      "notes": "Routine resting pulse",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "a81b3126-8707-448a-877c-bac61ab7ac50",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 118,
+        "diastolic": 78
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-29T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "a818d47c-5baa-49c9-aab6-5d20108e648d",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 121,
+        "diastolic": 80
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-28T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "aaec8939-ea4d-4496-aa10-79db5745469a",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 116,
+        "diastolic": 76
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-27T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "c02f610d-36b3-4cef-b680-69e5990716a7",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 119,
+        "diastolic": 77
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-26T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "826fa0dc-eaa6-4465-bc31-0dd4da99e132",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 124,
+        "diastolic": 82
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-25T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "99ff7c84-8bda-4862-ab0e-e0bf6357c1a1",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 117,
+        "diastolic": 75
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-24T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "69881cc6-785f-4f17-bfa3-2bedc85a57d5",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 119,
+        "diastolic": 77
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-23T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "74dc6f0a-88d2-41a3-b699-c33f14e2a452",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 120,
+        "diastolic": 78
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-21T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "d3bd87b2-468a-4061-a76b-fd23005a28d8",
+      "metric": "blood_pressure",
+      "value": {
+        "systolic": 118,
+        "diastolic": 76
+      },
+      "unit": "mmHg",
+      "recordedAt": "2026-09-19T10:52:34.857Z",
+      "notes": "Morning seated reading",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "d17a2c18-2c8f-430b-a957-aebb88a8460d",
+      "metric": "spo2",
+      "value": 98,
+      "unit": "%",
+      "recordedAt": "2026-09-29T10:52:34.857Z",
+      "notes": "Pulse oximeter check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.859Z",
+      "updatedAt": "2026-09-29T12:52:34.859Z"
+    },
+    {
+      "id": "649ac3d5-6a41-4f07-95bf-b49438ffb457",
+      "metric": "spo2",
+      "value": 99,
+      "unit": "%",
+      "recordedAt": "2026-09-28T22:52:34.857Z",
+      "notes": "Pulse oximeter check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "1dbb0c4e-8a70-468b-9b5f-1f7b6a96403a",
+      "metric": "spo2",
+      "value": 98,
+      "unit": "%",
+      "recordedAt": "2026-09-28T10:52:34.857Z",
+      "notes": "Pulse oximeter check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "dcf0f415-9492-40a8-a4fd-0aac2890ecb7",
+      "metric": "spo2",
+      "value": 97,
+      "unit": "%",
+      "recordedAt": "2026-09-27T10:52:34.857Z",
+      "notes": "Pulse oximeter check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "2cac27de-c61f-470b-8772-da99fc9ac303",
+      "metric": "spo2",
+      "value": 99,
+      "unit": "%",
+      "recordedAt": "2026-09-26T04:52:34.857Z",
+      "notes": "Pulse oximeter check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "279accec-832c-4822-9123-66e99665df9c",
+      "metric": "spo2",
+      "value": 98,
+      "unit": "%",
+      "recordedAt": "2026-09-24T22:52:34.857Z",
+      "notes": "Pulse oximeter check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "55e473a6-9906-4040-9677-2a6097772d88",
+      "metric": "spo2",
+      "value": 99,
+      "unit": "%",
+      "recordedAt": "2026-09-23T16:52:34.857Z",
+      "notes": "Pulse oximeter check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "5cc14a21-582b-42d3-96f6-9281112a4a5e",
+      "metric": "temperature",
+      "value": 36.6,
+      "unit": "°C",
+      "recordedAt": "2026-09-29T08:52:34.857Z",
+      "notes": "Oral thermometer check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "ad01a48f-5660-4ba4-8dc1-edead39784d6",
+      "metric": "temperature",
+      "value": 36.7,
+      "unit": "°C",
+      "recordedAt": "2026-09-28T08:52:34.857Z",
+      "notes": "Oral thermometer check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "100be2f6-3e54-44c9-bc5b-d7d14ee56fdb",
+      "metric": "temperature",
+      "value": 36.6,
+      "unit": "°C",
+      "recordedAt": "2026-09-27T08:52:34.857Z",
+      "notes": "Oral thermometer check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "518c7c2d-4228-4999-b7d6-8874e9310d0d",
+      "metric": "temperature",
+      "value": 36.5,
+      "unit": "°C",
+      "recordedAt": "2026-09-26T08:52:34.857Z",
+      "notes": "Oral thermometer check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "ab894338-4212-428c-8bdd-492f4553aa9f",
+      "metric": "temperature",
+      "value": 36.8,
+      "unit": "°C",
+      "recordedAt": "2026-09-24T08:52:34.857Z",
+      "notes": "Oral thermometer check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "d2e45fdb-7d37-4a3c-9dc9-865a60159948",
+      "metric": "temperature",
+      "value": 36.6,
+      "unit": "°C",
+      "recordedAt": "2026-09-22T08:52:34.857Z",
+      "notes": "Oral thermometer check",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "49a3b969-0e3d-449e-b564-03d1c0b219dd",
+      "metric": "steps",
+      "value": 8420,
+      "unit": "steps",
+      "recordedAt": "2026-09-29T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "c910094c-63d7-4f10-a989-590c4f462cc9",
+      "metric": "steps",
+      "value": 10250,
+      "unit": "steps",
+      "recordedAt": "2026-09-28T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "3ee49efd-3a5e-48ee-b48d-9531ca9f6b15",
+      "metric": "steps",
+      "value": 7890,
+      "unit": "steps",
+      "recordedAt": "2026-09-27T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "0f0b5b12-1efe-46b1-bc65-913f71d1b78d",
+      "metric": "steps",
+      "value": 11400,
+      "unit": "steps",
+      "recordedAt": "2026-09-26T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "552b9d69-a20a-4330-b4a8-bcef75be2bf6",
+      "metric": "steps",
+      "value": 6540,
+      "unit": "steps",
+      "recordedAt": "2026-09-25T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "05899843-03fc-4168-9cfa-a9aabebf630f",
+      "metric": "steps",
+      "value": 9800,
+      "unit": "steps",
+      "recordedAt": "2026-09-24T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "120891eb-053f-498f-a5bc-8274d8347766",
+      "metric": "steps",
+      "value": 8900,
+      "unit": "steps",
+      "recordedAt": "2026-09-23T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "356f4f04-134b-4ac6-b08e-cc91283351cc",
+      "metric": "steps",
+      "value": 10450,
+      "unit": "steps",
+      "recordedAt": "2026-09-22T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "91e8979d-1e8b-4ac0-b0ab-5a9a30cd6bfe",
+      "metric": "steps",
+      "value": 9200,
+      "unit": "steps",
+      "recordedAt": "2026-09-21T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "ed5babf5-7b5b-407d-9efc-d9b4b59e8c66",
+      "metric": "steps",
+      "value": 11100,
+      "unit": "steps",
+      "recordedAt": "2026-09-20T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "2c348884-515d-45b8-a8a1-50fad75d98f9",
+      "metric": "steps",
+      "value": 8700,
+      "unit": "steps",
+      "recordedAt": "2026-09-19T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "5e7c45b2-bf50-4f8e-9d34-68feafea1af7",
+      "metric": "steps",
+      "value": 7600,
+      "unit": "steps",
+      "recordedAt": "2026-09-18T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "541b5a30-47d9-483a-b06f-43a01c42d34c",
+      "metric": "steps",
+      "value": 10300,
+      "unit": "steps",
+      "recordedAt": "2026-09-17T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "c340af18-c3a0-4b27-b1c2-3d4c2ae485a7",
+      "metric": "steps",
+      "value": 9400,
+      "unit": "steps",
+      "recordedAt": "2026-09-16T11:52:34.857Z",
+      "notes": "Daily activity summary",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "bab70d71-6a6d-4d99-8976-3f513c9c917d",
+      "metric": "water",
+      "value": 2100,
+      "unit": "ml",
+      "recordedAt": "2026-09-29T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "b721a0c1-ba0c-4f62-ad23-732c1fa87c21",
+      "metric": "water",
+      "value": 2600,
+      "unit": "ml",
+      "recordedAt": "2026-09-28T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "45bb0973-452d-417a-8cfb-cf7a203ee4af",
+      "metric": "water",
+      "value": 2400,
+      "unit": "ml",
+      "recordedAt": "2026-09-27T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "7b8c5fc4-a6c3-4b0b-8fda-8178b7344145",
+      "metric": "water",
+      "value": 2700,
+      "unit": "ml",
+      "recordedAt": "2026-09-26T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "5178ec5f-3e47-4825-b0dd-ea58f2a7bc07",
+      "metric": "water",
+      "value": 2200,
+      "unit": "ml",
+      "recordedAt": "2026-09-25T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "574a0377-9be3-4fc6-8cf0-43710ed92104",
+      "metric": "water",
+      "value": 2550,
+      "unit": "ml",
+      "recordedAt": "2026-09-24T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "eb59169d-c0bb-438b-b333-77a0a0bcfcab",
+      "metric": "water",
+      "value": 2650,
+      "unit": "ml",
+      "recordedAt": "2026-09-23T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "79553af2-13a0-49ef-a957-fc82f47c8326",
+      "metric": "water",
+      "value": 2300,
+      "unit": "ml",
+      "recordedAt": "2026-09-22T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "759b7e3c-303b-4a17-8acf-7dcc3a6e109b",
+      "metric": "water",
+      "value": 2500,
+      "unit": "ml",
+      "recordedAt": "2026-09-21T09:52:34.857Z",
+      "notes": "Daily water consumption",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "46c4090a-ef11-4226-b330-4606a91ef4b1",
+      "metric": "sleep",
+      "value": 465,
+      "unit": "minutes",
+      "recordedAt": "2026-09-29T04:52:34.857Z",
+      "notes": "Overnight rest monitor",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.860Z",
+      "updatedAt": "2026-09-29T12:52:34.860Z"
+    },
+    {
+      "id": "d21bfce5-a2ae-489c-b281-d127ccb958fe",
+      "metric": "sleep",
+      "value": 490,
+      "unit": "minutes",
+      "recordedAt": "2026-09-28T04:52:34.857Z",
+      "notes": "Overnight rest monitor",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "c1be210e-63d7-4d54-8d46-d36da5509a53",
+      "metric": "sleep",
+      "value": 440,
+      "unit": "minutes",
+      "recordedAt": "2026-09-27T04:52:34.857Z",
+      "notes": "Overnight rest monitor",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "c11bf871-eb16-4728-9432-f29c3e0449d4",
+      "metric": "sleep",
+      "value": 510,
+      "unit": "minutes",
+      "recordedAt": "2026-09-26T04:52:34.857Z",
+      "notes": "Overnight rest monitor",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "41e2f18b-2ffa-45d6-b417-828495952a97",
+      "metric": "sleep",
+      "value": 430,
+      "unit": "minutes",
+      "recordedAt": "2026-09-25T04:52:34.857Z",
+      "notes": "Overnight rest monitor",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "37a15e6f-8aac-4a42-8e78-3a2c418a60c4",
+      "metric": "sleep",
+      "value": 480,
+      "unit": "minutes",
+      "recordedAt": "2026-09-24T04:52:34.857Z",
+      "notes": "Overnight rest monitor",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "083390ff-c5d3-4387-885a-499d8e2bd24e",
+      "metric": "sleep",
+      "value": 470,
+      "unit": "minutes",
+      "recordedAt": "2026-09-23T04:52:34.857Z",
+      "notes": "Overnight rest monitor",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "ccb36b67-58a3-4f1a-a4b0-47bd0e04e3e5",
+      "metric": "sleep",
+      "value": 500,
+      "unit": "minutes",
+      "recordedAt": "2026-09-22T04:52:34.857Z",
+      "notes": "Overnight rest monitor",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "a8ef3928-a0b6-4b40-8f7e-d1ae7eaa7048",
+      "metric": "activity",
+      "value": 48,
+      "unit": "minutes",
+      "recordedAt": "2026-09-29T07:52:34.857Z",
+      "notes": "Brisk walk & workout",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "abaa5c1e-5415-4fa3-a322-79e4238e53eb",
+      "metric": "activity",
+      "value": 55,
+      "unit": "minutes",
+      "recordedAt": "2026-09-28T07:52:34.857Z",
+      "notes": "Brisk walk & workout",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.861Z",
+      "updatedAt": "2026-09-29T12:52:34.861Z"
+    },
+    {
+      "id": "166234e4-7f8c-4e56-87a4-7801cccb3ea8",
+      "metric": "activity",
+      "value": 35,
+      "unit": "minutes",
+      "recordedAt": "2026-09-27T07:52:34.857Z",
+      "notes": "Brisk walk & workout",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.862Z",
+      "updatedAt": "2026-09-29T12:52:34.862Z"
+    },
+    {
+      "id": "927c3383-3af8-4b10-971a-08721dc66ae9",
+      "metric": "activity",
+      "value": 62,
+      "unit": "minutes",
+      "recordedAt": "2026-09-26T07:52:34.857Z",
+      "notes": "Brisk walk & workout",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.862Z",
+      "updatedAt": "2026-09-29T12:52:34.862Z"
+    },
+    {
+      "id": "f4aaf8b1-94f0-481b-957f-3abf405f04a6",
+      "metric": "activity",
+      "value": 30,
+      "unit": "minutes",
+      "recordedAt": "2026-09-25T07:52:34.857Z",
+      "notes": "Brisk walk & workout",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.862Z",
+      "updatedAt": "2026-09-29T12:52:34.862Z"
+    },
+    {
+      "id": "53831527-0518-4712-85a8-54b9f53c13e4",
+      "metric": "activity",
+      "value": 50,
+      "unit": "minutes",
+      "recordedAt": "2026-09-24T07:52:34.857Z",
+      "notes": "Brisk walk & workout",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.862Z",
+      "updatedAt": "2026-09-29T12:52:34.862Z"
+    },
+    {
+      "id": "f4ad0bbe-6802-4391-915b-0c04e31db1e1",
+      "metric": "activity",
+      "value": 45,
+      "unit": "minutes",
+      "recordedAt": "2026-09-23T07:52:34.857Z",
+      "notes": "Brisk walk & workout",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.862Z",
+      "updatedAt": "2026-09-29T12:52:34.862Z"
+    },
+    {
+      "id": "4cc82ca1-286f-4924-acbc-fd09e59f5282",
+      "metric": "weight",
+      "value": 70.2,
+      "unit": "kg",
+      "recordedAt": "2026-09-29T12:52:34.857Z",
+      "notes": "Morning body weight",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.862Z",
+      "updatedAt": "2026-09-29T12:52:34.862Z"
+    },
+    {
+      "id": "38707528-81f2-4107-8b58-90ac94a2eb70",
+      "metric": "weight",
+      "value": 70.5,
+      "unit": "kg",
+      "recordedAt": "2026-09-22T12:52:34.857Z",
+      "notes": "Morning body weight",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.862Z",
+      "updatedAt": "2026-09-29T12:52:34.862Z"
+    },
+    {
+      "id": "79717a55-fc7f-47e9-a90c-4e172290e2e1",
+      "metric": "weight",
+      "value": 70.8,
+      "unit": "kg",
+      "recordedAt": "2026-09-15T12:52:34.857Z",
+      "notes": "Morning body weight",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.862Z",
+      "updatedAt": "2026-09-29T12:52:34.862Z"
+    },
+    {
+      "id": "99ec1ef8-cc8e-4608-8183-3345ac9fc9ae",
+      "metric": "weight",
+      "value": 71,
+      "unit": "kg",
+      "recordedAt": "2026-09-08T12:52:34.857Z",
+      "notes": "Morning body weight",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.863Z",
+      "updatedAt": "2026-09-29T12:52:34.863Z"
+    },
+    {
+      "id": "5fe68378-5a26-4a46-8373-903e10c68d01",
+      "metric": "heart_rate",
+      "value": 71,
+      "unit": "bpm",
+      "recordedAt": "2026-09-29T05:52:34.857Z",
+      "notes": "Waking resting heart rate",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.863Z",
+      "updatedAt": "2026-09-29T12:52:34.863Z"
+    },
+    {
+      "id": "ed185e70-35c4-4043-aa15-bfe2b2cb8c2b",
+      "metric": "water",
+      "value": 350,
+      "unit": "ml",
+      "recordedAt": "2026-09-29T07:52:34.857Z",
+      "notes": "Morning glass of water",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.863Z",
+      "updatedAt": "2026-09-29T12:52:34.863Z"
+    },
+    {
+      "id": "db6c2f64-5dae-4652-81e4-7ec9f8701b8e",
+      "metric": "steps",
+      "value": 2350,
+      "unit": "steps",
+      "recordedAt": "2026-09-29T09:52:34.857Z",
+      "notes": "Morning park stroll",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.863Z",
+      "updatedAt": "2026-09-29T12:52:34.863Z"
+    },
+    {
+      "id": "bb3c315a-305e-4cdf-aa6a-fd0e018e22ea",
+      "metric": "activity",
+      "value": 30,
+      "unit": "minutes",
+      "recordedAt": "2026-09-29T10:52:34.857Z",
+      "notes": "Mid-day cardio routine",
+      "isDemo": true,
+      "createdAt": "2026-09-29T12:52:34.863Z",
+      "updatedAt": "2026-09-29T12:52:34.863Z"
+    },
+    {
+      "id": "imported-test-1",
+      "metric": "steps",
+      "value": 6500,
+      "unit": "steps",
+      "recordedAt": "2026-09-29T12:44:38.443Z"
+    }
+  ],
+  "userGoals": {
+    "steps": 10000,
+    "waterMl": 2500,
+    "sleepMinutes": 480,
+    "activeMinutes": 45
+  },
+  "userProfile": {
+    "name": "Shashank",
+    "age": 29,
+    "gender": "Not specified",
+    "heightCm": 175,
+    "weightKg": 70,
+    "unitSystem": "metric",
+    "trackingAlertsEnabled": true,
+    "onboardingCompleted": true
+  },
+  "savedAt": "2026-09-29T12:52:34.863Z"
+}

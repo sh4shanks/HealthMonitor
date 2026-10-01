@@ -1,4 +1,8 @@
-const API = (import.meta.env.VITE_API_URL || "http://localhost:5000").replace(/\/$/, "");
+let rawApi = (import.meta.env.VITE_API_URL ?? "").replace(/\/$/, "");
+if (rawApi === "http://localhost:5000" || rawApi === "http://127.0.0.1:5000") {
+  rawApi = "";
+}
+const API = rawApi;
 
 async function request(path, options = {}) {
   const response = await fetch(`${API}${path}`, {
